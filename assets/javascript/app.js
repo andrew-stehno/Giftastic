@@ -62,6 +62,15 @@ function displayToon() {
 })
 };
 
+$('#add-toon').click(function (event) {
+    event.preventDefault();
+    let toon = $('#new-toon').val().trim();
+
+    topics.push(toon);
+    
+    displayButton();
+})
+
 
 
 
