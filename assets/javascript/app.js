@@ -23,14 +23,9 @@ function displayButton() {
         a.text(topics[i]);
         btnDiv.append(a);
         console.log(topics[i]);
-        $('body').append(btnDiv);
+        $('#buttons').append(btnDiv);
     }   
     displayToon();
-    // $('button').click(function() {
-    //     let userGuess = $(this).text();
-    //     console.log("User guess: " + userGuess);
-    //     displayToon();
-    // })
 };
 
 displayButton();
@@ -61,7 +56,7 @@ function displayToon() {
             gifDiv.prepend(p);
             gifDiv.prepend(image);
 
-            $('body').append(gifDiv);
+            $('#giphies').prepend(gifDiv);
         } 
     })
 })
