@@ -46,32 +46,52 @@ function displayToon() {
         for (let i = 0; i < results.length; i++) {
             let gifDiv = $('<div>');
 
-            let rating = results[i].rating;
+            let rating = results[i].rating.toUpperCase();
 
             let p = $('<p>').text("Rating: " + rating);
 
             let image = $('<img>');
-            image.attr('src', results[i].images.fixed_height.url);
+            //image.attr('src', results[i].images.fixed_height.url);
+            image.attr({'src': results[i].images.fixed_height_still.url, 'data-still':results[i].images.fixed_height_still.url, 'data-animate': results[i].images.fixed_height.url, 'data-state': "still", class: "gif"});
             
             gifDiv.prepend(p);
             gifDiv.prepend(image);
 
             $('#giphies').prepend(gifDiv);
         } 
+    
     })
+    
 })
 };
 
 $('#add-toon').click(function (event) {
     event.preventDefault();
+
     let toon = $('#new-toon').val().trim();
 
     topics.push(toon);
+
+    $('#new-toon').val("");
     
     displayButton();
 })
 
+function stillOrNot() {
+    $('.giphy').click(function () {
 
+        let state = $(this).attr("data-state");
+
+        if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+    }   else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+    }
+    })
+    
+};
 
 
 
