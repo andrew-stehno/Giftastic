@@ -5,3 +5,25 @@ button {
     background-color: #ff6347;
     color: #ffffff;
 }
+
+#add {
+    float: right;
+    box-sizing: border-box;
+    margin-right: 75px;
+    margin-top: 20 px;
+}
+
+#new-toon {
+    margin-top: 5px;    
+    margin-bottom: 5px;
+}
+
+#add-toon {
+    background-color: #ff6347;
+    color: #ffffff;
+}
+
+#giphies {
+    margin-left: 20px;
+    margin-top: 20px;
+}

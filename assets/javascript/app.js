@@ -1,14 +1,14 @@
-// Main array of characters:================================
+// Main array of characters:=======================================
 
 let topics = ["Bugs Bunny", "Tweety", "Popeye", "Elmer Fudd", "Yosemite Sam", "Woody Woodpecker",
  "Foghorn Leghorn", "Sylvester", "Marvin the Martian", "Tasmanian Devil", "Bluto", "Wile E Coyote"];
 
-// Globally scoped vairiables:==============================
+// Globally scoped vairiables:=====================================
 
 let btnDiv = $('<div id="toon">');
 let gifDiv = $('<div id="giphy">');
 
-// Display button function:=================================
+// Display button function:========================================
 
 function displayButton() {
 
@@ -28,7 +28,7 @@ function displayButton() {
     displayToon();
 };
 
-displayButton();
+// API key/request + character giphy display:======================
 
 function displayToon() {
     $('.character').click(function () {
@@ -52,8 +52,15 @@ function displayToon() {
 
             let image = $('<img>');
             //image.attr('src', results[i].images.fixed_height.url);
-            image.attr({'src': results[i].images.fixed_height_still.url, 'data-still':results[i].images.fixed_height_still.url, 'data-animate': results[i].images.fixed_height.url, 'data-state': "still", class: "gif"});
+            //image.attr({'src': results[i].images.fixed_height_still.url, 'data-still':results[i].images.fixed_height_still.url, 'data-animate': results[i].images.fixed_height.url, 'data-state': "still", class: "gif"});
             
+            image.addClass('gif');
+            image.attr('src', results[i].images.fixed_height_still.url);
+            image.attr('data-still', 'still');
+            image.attr('data-still', results[i].images.fixed_height_still.url);
+            image.attr('data-animate', results[i].images.fixed_height.url);
+
+
             gifDiv.prepend(p);
             gifDiv.prepend(image);
 
@@ -62,8 +69,10 @@ function displayToon() {
     
     })
     
-})
-};
+})  
+}; 
+
+// Add character form field + button:==============================
 
 $('#add-toon').click(function (event) {
     event.preventDefault();
@@ -76,6 +85,8 @@ $('#add-toon').click(function (event) {
     
     displayButton();
 })
+
+// Pause/play gif's function:======================================
 
 function stillOrNot() {
     $('.giphy').click(function () {
@@ -93,5 +104,6 @@ function stillOrNot() {
     
 };
 
+// Function invocation:============================================
 
-
+displayButton();
