@@ -33,6 +33,10 @@ label {
     margin-top: 20px;
 }
 
+.wrapGif {
+    display: inline-block;
+}
+
 .ratingFont {
     font-size: 18px;
     font-weight: 600;

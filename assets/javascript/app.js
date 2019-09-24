@@ -44,14 +44,13 @@ function displayToon() {
             let results = response.data;
 
             for (let i = 0; i < results.length; i++) {
-                let gifDiv = $('<div>');
+                let gifDiv = $('<div>').attr('class', "wrapGif");
 
                 let rating = results[i].rating.toUpperCase();
 
                 let p = $('<p>').text("Rating: " + rating).attr('class', "ratingFont");
 
                 let image = $('<img>');
-                //image.attr('src', results[i].images.fixed_height.url);
                 image.attr({ 'src': results[i].images.fixed_height_still.url, 'data-state': "still", 'data-still': results[i].images.fixed_height_still.url, 'data-animate': results[i].images.fixed_height.url, class: "gif" });
 
                 gifDiv.prepend(p);
