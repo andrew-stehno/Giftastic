@@ -18,6 +18,11 @@ button {
     margin-bottom: 5px;
 }
 
+label {
+    font-size: 18px;
+    font-weight: 600;
+}
+
 #add-toon {
     background-color: #ff6347;
     color: #ffffff;
@@ -26,4 +31,42 @@ button {
 #giphies {
     margin-left: 20px;
     margin-top: 20px;
+}
+
+.ratingFont {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    #add {
+        float: none;
+        text-align: center;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        margin-top: 20 px;
+        
+    }
+
+    #giphies {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    #add {
+        float: none;
+        text-align: center;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        margin-top: 20 px;
+        
+    }
+
+    #giphies {
+        text-align: center;
+    }
 }
