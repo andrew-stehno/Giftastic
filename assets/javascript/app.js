@@ -22,8 +22,9 @@ function displayButton() {
         a.attr('data-name', topics[i]);
         a.text(topics[i]);
         btnDiv.append(a);
-        console.log(topics[i]);
+        // console.log(topics[i]);
         $('#buttons').append(btnDiv);
+
     }
     displayToon();
 };
@@ -39,7 +40,7 @@ function displayToon() {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-            console.log(response);
+            // console.log(response);
 
             let results = response.data;
 
@@ -64,18 +65,26 @@ function displayToon() {
     })
 };
 
-// Add character form field + button:==============================
+// Add character from field + button:==============================
 
 $('#add-toon').click(function (event) {
     event.preventDefault();
 
     let toon = $('#new-toon').val().trim();
+    console.log(toon.length);
+        // if statement declaring empty field, or space, or duplicate prompts alert!
+        if (toon.length === 0) {
+            console.log(toon.length);
+            alert("Please enter a valid name.")
+        } else {
 
-    topics.push(toon);
+            topics.push(toon);
 
-    $('#new-toon').val("");
+            $('#new-toon').val("");
+        }
 
-    displayButton();
+        displayButton();
+    
 })
 
 // Pause/play gif's function:======================================
